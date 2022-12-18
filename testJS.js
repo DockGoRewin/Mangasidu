@@ -501,7 +501,7 @@ function displayVisited() {
     addarticle(id, title, ling, borkimage, type, rate, widthRate)
   } else {
     ActiveIdsBookmark = removeVisited(ActiveIdsBookmark, id);
-    var src = id.split('-');
+    var src = id.split('-')[1];
     removearticle(src)
     $('.DG-BOOKMARK').html('<i aria-hidden="true" class="far fa-bookmark"></i> Bookmark');
   }
@@ -534,7 +534,7 @@ var setAllBookmark = function(Bookmark){
 var addarticle = function(id, title, ling, borkimage, type, rate, widthRate) {
   var Bookmark = getAllBookmark();
   Bookmark.push({
-  code: id.split('-'),
+  code: id.split('-')[1],
   title: title,
   link: ling,
   borkimage: borkimage,
