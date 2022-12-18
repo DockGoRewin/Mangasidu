@@ -433,7 +433,7 @@ $.ajax({
 
                     NavBiodataMelayang +='<a href="'+posturl1+'"><i class="fas fa-angle-double-left" aria-hidden="true"></i></a>';
 
-                    NavBookmark +='<span class="bookmark DG-BOOKMARK" id="'+postID1+'" data-type="'+Type+'" data-name="'+posttitle1+'" data-url="'+posturl1+'" data-image="'+thumb1+'" data-rate="'+TotalRate1+'" data-widthRate="'+PrsnRate1+'"> <i aria-hidden="true" class="far fa-bookmark"></i> Bookmark</span>';
+                    NavBookmark +='<span class="bookmark DG-BOOKMARK" id="ID-'+postID1+'" data-type="'+Type+'" data-name="'+posttitle1+'" data-url="'+posturl1+'" data-image="'+thumb1+'" data-rate="'+TotalRate1+'" data-widthRate="'+PrsnRate1+'"> <i aria-hidden="true" class="far fa-bookmark"></i> Bookmark</span>';
 
                     chdesc+=`<p> Read the latest manga <b>
 `+pT+` </b> at <b>
@@ -488,7 +488,7 @@ function displayVisited() {
   $('.DG-BOOKMARK').removeClass('marked')
   var ActiveIdsBookmark = getActiveIdsBookmark();
   if (ActiveIdsBookmark.length > 0) {
-    var idString = '#' + ActiveIdsBookmark.split('-')[1].join(",#");
+    var idString = '#' + ActiveIdsBookmark.join(",#");
     $(idString).closest('.DG-BOOKMARK').addClass('marked');
     $(idString).closest('.DG-BOOKMARK').html('<i aria-hidden="true" class="fas fa-bookmark"></i> Bookmarked');
   }
