@@ -486,7 +486,7 @@ $.ajax({
 
 function displayVisited() {
   $('.DG-BOOKMARK').removeClass('marked')
-  var ActiveIdsBookmark = getActiveIdsBookmark();
+  var ActiveIdsBookmark = getActiveIdsBookmark().split('-')[1];
   if (ActiveIdsBookmark.length > 0) {
     var idString = '#' + ActiveIdsBookmark.join(",#");
     $(idString).closest('.DG-BOOKMARK').addClass('marked');
