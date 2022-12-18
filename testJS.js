@@ -486,9 +486,9 @@ $.ajax({
 
 function displayVisited() {
   $('.DG-BOOKMARK').removeClass('marked')
-  var ActiveIdsBookmark = getActiveIdsBookmark().split('-')[1];
+  var ActiveIdsBookmark = getActiveIdsBookmark();
   if (ActiveIdsBookmark.length > 0) {
-    var idString = '#' + ActiveIdsBookmark.join(",#");
+    var idString = '#' + ActiveIdsBookmark.split('-')[1].join(",#");
     $(idString).closest('.DG-BOOKMARK').addClass('marked');
     $(idString).closest('.DG-BOOKMARK').html('<i aria-hidden="true" class="fas fa-bookmark"></i> Bookmarked');
   }
