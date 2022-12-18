@@ -475,7 +475,7 @@ $.ajax({
 
                   $('.DG-BOOKMARK').click(function(e){
                     var borkimage = $(this).attr('data-image');
-	            var id = "ID-" + $(this).attr("id")
+	            var id = $(this).attr("id")
                     var ling = $(this).attr('data-url');
                     var title = $(this).attr('data-name');
                     var type = $(this).attr('data-type');
