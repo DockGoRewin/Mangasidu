@@ -496,7 +496,7 @@ function displayVisited() {
  function toggleVisited(id,borkimage,ling,title,type,rate,widthRate) {
   var ActiveIdsBookmark = getActiveIdsBookmark();
   if ($.inArray(id, ActiveIdsBookmark) === -1) {
-    ActiveIdsBookmark.push(id);
+    ActiveIdsBookmark.push("ID-" +id);
     addarticle(id, title, ling, borkimage, type, rate, widthRate)
   } else {
     ActiveIdsBookmark = removeVisited(ActiveIdsBookmark, id);
