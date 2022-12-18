@@ -475,12 +475,13 @@ $.ajax({
 
                   $('.DG-BOOKMARK').click(function(e){
                     var borkimage = $(this).attr('data-image');
+	            var id = "ID-" + $(this).attr("id")
                     var ling = $(this).attr('data-url');
                     var title = $(this).attr('data-name');
                     var type = $(this).attr('data-type');
                     var rate = $(this).attr('data-rate');
                     var widthRate = $(this).attr('data-widthrate');
-                    toggleVisited(this.id,borkimage,ling,title,type,rate,widthRate);
+                    toggleVisited(id,borkimage,ling,title,type,rate,widthRate);
                   })
 
 function displayVisited() {
@@ -496,11 +497,11 @@ function displayVisited() {
  function toggleVisited(id,borkimage,ling,title,type,rate,widthRate) {
   var ActiveIdsBookmark = getActiveIdsBookmark();
   if ($.inArray(id, ActiveIdsBookmark) === -1) {
-    ActiveIdsBookmark.push("ID-" +id);
+    ActiveIdsBookmark.push(id);
     addarticle(id, title, ling, borkimage, type, rate, widthRate)
   } else {
     ActiveIdsBookmark = removeVisited(ActiveIdsBookmark, id);
-    var src = id;
+    var src = id.split('-');
     removearticle(src)
     $('.DG-BOOKMARK').html('<i aria-hidden="true" class="far fa-bookmark"></i> Bookmark');
   }
@@ -533,7 +534,7 @@ var setAllBookmark = function(Bookmark){
 var addarticle = function(id, title, ling, borkimage, type, rate, widthRate) {
   var Bookmark = getAllBookmark();
   Bookmark.push({
-  code: id,
+  code: id.split('-'),
   title: title,
   link: ling,
   borkimage: borkimage,
